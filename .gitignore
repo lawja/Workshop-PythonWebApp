@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 # db
-.db
+*.db
