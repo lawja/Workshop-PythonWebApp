@@ -1,0 +1,35 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: grey !important;
+}
+
+.container, .row{
+    height: 100%;
+}
+
+.gb{
+    background-color: lightgrey;
+}
+
+.wb{
+    background-color: white;
+}
+.col-md-6{
+    height: 100%;
+    display: inline-block;
+}
+
+#post-content{
+    resize: none;
+}
+
+.post{
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    text-align: left;
+}

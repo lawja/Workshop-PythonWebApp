@@ -1,5 +1,47 @@
 <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </head>
   <body>
-    <p>Hello</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 gb" align="center">
+          <h1>Posts</h1>
+          <br>
+          {% if posts %}
+            {{ posts|safe }}
+          {% else %}
+            <hr>
+            <h5>No Posts Yet!</h5>
+          {% endif %}
+        </div>
+        <div class="col-md-6 wb" align="center">
+          <h1>Write Post</h1>
+          <form id="write-post" action="/write-post" method="post">
+            <label for="#post-title"><strong><h4>Title > </h4></strong></label>
+            <input type="text" id="post-title" name="title"
+                   placeholder="Enter Post Title" required />
+            <br>
+            <label for="#post-content"><strong><h4>Content</h4></strong>
+            </label>
+            <textarea rows="4" cols="50" id="post-content"
+                      name="content" required>
+            </textarea>
+            <br>
+            <br>
+            <label for="#post-key"><strong><h4>Key ></h4></strong>
+            </label>
+            <input type="password" id="post-key" name="key"
+                   placeholder="What's the key?" required/>
+            <br>
+            <button type="submit" name="submit"
+                    class="btn-primary">Submit Post</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
